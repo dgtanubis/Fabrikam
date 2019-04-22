@@ -28,9 +28,18 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: VisualStudioTestPlatformInstaller@1
+
 #- task: VSTest@2
   inputs:
  #   platform: '$(buildPlatform)'
  #   configuration: '$(buildConfiguration)'
- - task: VisualStudioTestPlatformInstaller@1
+
    inputs:
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+  
